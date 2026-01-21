@@ -1,0 +1,53 @@
+{
+  "name": "modelscope-image-generator",
+  "version": "1.0.0",
+  "description": "使用 ModelScope API 生成图片的 Skill",
+  "author": "OpenCode",
+  "license": "MIT",
+  "main": "skill.py",
+  "skills": [
+    {
+      "name": "generate_image",
+      "description": "根据文本提示生成图片",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "description": "生成图片的文本描述",
+            "required": true
+          },
+          "model": {
+            "type": "string",
+            "description": "使用的模型名称",
+            "enum": ["Qwen/Qwen-Image-2512", "Tongyi-MAI/Z-Image-Turbo"],
+            "default": "Tongyi-MAI/Z-Image-Turbo"
+          },
+          "size": {
+            "type": "string",
+            "description": "图片尺寸，如 1024x1024",
+            "default": "1024x1024"
+          },
+          "output_filename": {
+            "type": "string",
+            "description": "保存的文件名",
+            "default": "result_image.jpg"
+          },
+          "output_dir": {
+            "type": "string",
+            "description": "保存目录",
+            "default": "./outputs"
+          }
+        },
+        "required": ["prompt"]
+      }
+    }
+  ],
+  "configuration": {
+    "api_key_env": "MODELSCOPE_API_KEY",
+    "supported_models": [
+      "Qwen/Qwen-Image-2512",
+      "Tongyi-MAI/Z-Image-Turbo"
+    ]
+  }
+}
