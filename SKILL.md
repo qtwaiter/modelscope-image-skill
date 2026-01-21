@@ -1,8 +1,9 @@
+---
+name: modelscope-image-generator
+description: 使用 ModelScope API 生成图片的 Skill，支持通义千问和通义万相模型。
+---
+
 # ModelScope Image Generation Skill
-
-**Name:** modelscope-image-generator
-
-**Description:** 使用 ModelScope API 生成图片的 Skill，支持通义千问和通义万相模型。
 
 ## Features
 
